@@ -30,8 +30,10 @@ class ScholarshipForm
                     ->required(),
                 Toggle::make('is_active')
                     ->required(),
-                TextInput::make('ambassador_id')
-                    ->numeric(),
+                Select::make('ambassador_id')
+                    ->label('Ambassador')
+                    ->options(Ambassador::all()->pluck('name', 'id'))
+                    ->required(),
             ]);
     }
 }
