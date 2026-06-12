@@ -9,7 +9,7 @@ use App\Filament\Resources\Scolarships\Pages\ViewScolarship;
 use App\Filament\Resources\Scolarships\Schemas\ScolarshipForm;
 use App\Filament\Resources\Scolarships\Schemas\ScolarshipInfolist;
 use App\Filament\Resources\Scolarships\Tables\ScolarshipsTable;
-use App\Models\Scolarship;
+use App\Models\Scholarship;
 use BackedEnum;
 use Filament\Resources\Resource;
 use Filament\Schemas\Schema;
@@ -18,9 +18,9 @@ use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 
-class ScolarshipResource extends Resource
+class ScholarshipResource extends Resource
 {
-    protected static ?string $model = Scolarship::class;
+    protected static ?string $model = Scholarship::class;
 
     protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;
 

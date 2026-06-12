@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Filament\Resources\Scolarships\Schemas;
+namespace App\Filament\Resources\Scholarships\Schemas;
 
 use Filament\Schemas\Schema;
 
-class ScolarshipForm
+class ScholarshipForm
 {
     public static function configure(Schema $schema): Schema
     {

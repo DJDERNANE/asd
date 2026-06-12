@@ -1,17 +1,17 @@
 <?php
 
-namespace App\Filament\Resources\Scolarships\Pages;
+namespace App\Filament\Resources\Scholarships\Pages;
 
-use App\Filament\Resources\Scolarships\ScolarshipResource;
+use App\Filament\Resources\Scholarships\ScholarshipResource;
 use Filament\Actions\DeleteAction;
 use Filament\Actions\ForceDeleteAction;
 use Filament\Actions\RestoreAction;
 use Filament\Actions\ViewAction;
 use Filament\Resources\Pages\EditRecord;
 
-class EditScolarship extends EditRecord
+class EditScholarship extends EditRecord
 {
-    protected static string $resource = ScolarshipResource::class;
+    protected static string $resource = ScholarshipResource::class;
 
     protected function getHeaderActions(): array
     {
