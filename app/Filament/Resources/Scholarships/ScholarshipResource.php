@@ -15,8 +15,6 @@ use Filament\Resources\Resource;
 use Filament\Schemas\Schema;
 use Filament\Support\Icons\Heroicon;
 use Filament\Tables\Table;
-use Illuminate\Database\Eloquent\Builder;
-use Illuminate\Database\Eloquent\SoftDeletingScope;
 
 class ScholarshipResource extends Resource
 {
@@ -26,17 +24,17 @@ class ScholarshipResource extends Resource
 
     public static function form(Schema $schema): Schema
     {
-        return  ScholarshipForm::configure($schema);
+        return ScholarshipForm::configure($schema);
     }
 
     public static function infolist(Schema $schema): Schema
     {
-        return  ScholarshipInfolist::configure($schema);
+        return ScholarshipInfolist::configure($schema);
     }
 
     public static function table(Table $table): Table
     {
-        return  ScholarshipsTable::configure($table);
+        return ScholarshipsTable::configure($table);
     }
 
     public static function getRelations(): array
@@ -54,13 +52,5 @@ class ScholarshipResource extends Resource
             'view' => ViewScholarship::route('/{record}'),
             'edit' => EditScholarship::route('/{record}/edit'),
         ];
-    }
-
-    public static function getRecordRouteBindingEloquentQuery(): Builder
-    {
-        return parent::getRecordRouteBindingEloquentQuery()
-            ->withoutGlobalScopes([
-                SoftDeletingScope::class,
-            ]);
     }
 }

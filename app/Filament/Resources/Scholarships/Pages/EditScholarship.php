@@ -4,8 +4,6 @@ namespace App\Filament\Resources\Scholarships\Pages;
 
 use App\Filament\Resources\Scholarships\ScholarshipResource;
 use Filament\Actions\DeleteAction;
-use Filament\Actions\ForceDeleteAction;
-use Filament\Actions\RestoreAction;
 use Filament\Actions\ViewAction;
 use Filament\Resources\Pages\EditRecord;
 
@@ -18,8 +16,6 @@ class EditScholarship extends EditRecord
         return [
             ViewAction::make(),
             DeleteAction::make(),
-            ForceDeleteAction::make(),
-            RestoreAction::make(),
         ];
     }
 }

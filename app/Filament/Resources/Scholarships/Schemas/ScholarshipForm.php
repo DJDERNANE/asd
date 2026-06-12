@@ -2,6 +2,10 @@
 
 namespace App\Filament\Resources\Scholarships\Schemas;
 
+use Filament\Forms\Components\DatePicker;
+use Filament\Forms\Components\TextInput;
+use Filament\Forms\Components\Textarea;
+use Filament\Forms\Components\Toggle;
 use Filament\Schemas\Schema;
 
 class ScholarshipForm
@@ -10,7 +14,24 @@ class ScholarshipForm
     {
         return $schema
             ->components([
-                //
+                TextInput::make('title')
+                    ->required(),
+                Textarea::make('description')
+                    ->required()
+                    ->columnSpanFull(),
+                Textarea::make('requirements')
+                    ->columnSpanFull(),
+                TextInput::make('amount')
+                    ->required()
+                    ->numeric(),
+                DatePicker::make('start_date')
+                    ->required(),
+                DatePicker::make('end_date')
+                    ->required(),
+                Toggle::make('is_active')
+                    ->required(),
+                TextInput::make('ambassador_id')
+                    ->numeric(),
             ]);
     }
 }
