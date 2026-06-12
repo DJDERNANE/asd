@@ -1,14 +1,14 @@
 <?php
 
-namespace App\Filament\Resources\Scolarships;
+namespace App\Filament\Resources\Scholarships;
 
-use App\Filament\Resources\Scolarships\Pages\CreateScolarship;
-use App\Filament\Resources\Scolarships\Pages\EditScolarship;
-use App\Filament\Resources\Scolarships\Pages\ListScolarships;
-use App\Filament\Resources\Scolarships\Pages\ViewScolarship;
-use App\Filament\Resources\Scolarships\Schemas\ScolarshipForm;
-use App\Filament\Resources\Scolarships\Schemas\ScolarshipInfolist;
-use App\Filament\Resources\Scolarships\Tables\ScolarshipsTable;
+use App\Filament\Resources\Scholarships\Pages\CreateScholarship;
+use App\Filament\Resources\Scholarships\Pages\EditScholarship;
+use App\Filament\Resources\Scholarships\Pages\ListScholarships;
+use App\Filament\Resources\Scholarships\Pages\ViewScholarship;
+use App\Filament\Resources\Scholarships\Schemas\ScholarshipForm;
+use App\Filament\Resources\Scholarships\Schemas\ScholarshipInfolist;
+use App\Filament\Resources\Scholarships\Tables\ScholarshipsTable;
 use App\Models\Scholarship;
 use BackedEnum;
 use Filament\Resources\Resource;
@@ -26,17 +26,17 @@ class ScholarshipResource extends Resource
 
     public static function form(Schema $schema): Schema
     {
-        return ScolarshipForm::configure($schema);
+        return  ScholarshipForm::configure($schema);
     }
 
     public static function infolist(Schema $schema): Schema
     {
-        return ScolarshipInfolist::configure($schema);
+        return  ScholarshipInfolist::configure($schema);
     }
 
     public static function table(Table $table): Table
     {
-        return ScolarshipsTable::configure($table);
+        return  ScholarshipsTable::configure($table);
     }
 
     public static function getRelations(): array
@@ -49,10 +49,10 @@ class ScholarshipResource extends Resource
     public static function getPages(): array
     {
         return [
-            'index' => ListScolarships::route('/'),
-            'create' => CreateScolarship::route('/create'),
-            'view' => ViewScolarship::route('/{record}'),
-            'edit' => EditScolarship::route('/{record}/edit'),
+            'index' => ListScholarships::route('/'),
+            'create' => CreateScholarship::route('/create'),
+            'view' => ViewScholarship::route('/{record}'),
+            'edit' => EditScholarship::route('/{record}/edit'),
         ];
     }
 
