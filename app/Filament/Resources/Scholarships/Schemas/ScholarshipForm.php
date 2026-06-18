@@ -7,6 +7,7 @@ use Filament\Forms\Components\Select;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\Toggle;
+use Filament\Forms\Components\FileUpload;
 use App\Models\Ambassador;
 use Filament\Schemas\Schema;
 
@@ -21,6 +22,9 @@ class ScholarshipForm
                 Textarea::make('description')
                     ->required()
                     ->columnSpanFull(),
+                FileUpload::make('image')
+                    ->disk('public')
+                    ->directory('images/scholarships'),
                 Textarea::make('requirements')
                     ->columnSpanFull(),
                 TextInput::make('amount')

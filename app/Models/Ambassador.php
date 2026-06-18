@@ -10,7 +10,7 @@ class Ambassador extends Model
     use HasFactory;
 
     protected $fillable = [
-        'name', 'code', 'ambassador_name', 'ambassador_email', 'country', 'is_active'
+        'name', 'code', 'ambassador_name', 'ambassador_email', 'country', 'is_active', 'image',
     ];
 
     protected $casts = [

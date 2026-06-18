@@ -19,6 +19,7 @@ class ApplicationService
         return DB::transaction(function () use ($validatedData) {
             $student = Student::create([
                 'name'           => $validatedData['name'],
+                'email'          => $validatedData['email'],
                 'birth_date'     => $validatedData['birth_date'],
                 'phone'          => $validatedData['phone'],
                 'wilaya'         => $validatedData['wilaya'],

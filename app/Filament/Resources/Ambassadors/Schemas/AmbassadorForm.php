@@ -5,6 +5,7 @@ namespace App\Filament\Resources\Ambassadors\Schemas;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Toggle;
 use Filament\Forms\Components\Select;
+use Filament\Forms\Components\FileUpload;
 use Filament\Schemas\Schema;
 
 class AmbassadorForm
@@ -20,6 +21,9 @@ class AmbassadorForm
                 TextInput::make('ambassador_name'),
                 TextInput::make('ambassador_email')
                     ->email(),
+                FileUpload::make('image')
+                    ->disk('public')
+                    ->directory('images/ambassadors'),
                 Select::make('country')
                     ->options([
                         'usa' => 'United States',

@@ -10,7 +10,7 @@ class Scholarship extends Model
     use HasFactory;
 
     protected $fillable = [
-        'title', 'description', 'requirements', 'amount', 'start_date', 'end_date', 'is_active', 'ambassador_id'
+        'title', 'description', 'requirements', 'amount', 'start_date', 'end_date', 'is_active', 'ambassador_id', 'image',
     ];
     protected $casts = [
         'is_active' => 'boolean',

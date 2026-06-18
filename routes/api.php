@@ -15,7 +15,9 @@ Route::get('/user', function (Request $request) {
 | Public API Routes
 |--------------------------------------------------------------------------
 */
-
-Route::get('/ambassadors', [AmbassadorController::class, 'index']);
-Route::get('/scholarships', [ScholarshipController::class, 'index']);
-Route::post('/applications', [ApplicationController::class, 'store']);
+Route::prefix('v1')->group(function () {
+    Route::get('/ambassadors', [AmbassadorController::class, 'index']);
+    Route::get('/scholarships', [ScholarshipController::class, 'index']);
+    Route::get('/scholarships/ambassador/{id}', [ScholarshipController::class, 'getAllByAmbassadorId']);
+    Route::post('/applications', [ApplicationController::class, 'store']);
+});

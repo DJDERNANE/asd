@@ -16,6 +16,7 @@ class StoreApplicationRequest extends FormRequest
         return [
             // Student fields
             'name'           => ['required', 'string', 'max:255'],
+            'email'          => ['required', 'email', 'max:255'],
             'birth_date'     => ['required', 'date', 'before:today'],
             'phone'          => ['required', 'string', 'max:20'],
             'wilaya'         => ['required', 'string', 'max:255'],

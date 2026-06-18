@@ -16,4 +16,15 @@ class ScholarshipService
             ->with('ambassador:id,name,code,country')
             ->get();
     }
+
+    /**
+     * Get all active scholarships for a specific ambassador.
+     */
+    public function getAllByAmbassadorId($id): Collection
+    {
+        return Scholarship::active()
+            ->where('ambassador_id', $id)
+            ->with('ambassador:id,name,code,country')
+            ->get();
+    }
 }
